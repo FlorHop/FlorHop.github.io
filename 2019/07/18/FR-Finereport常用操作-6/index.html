@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Blog of Chenxi Wang">
 <meta property="og:description" content="功能:&amp;ensp; 外置图片使用场景:&amp;ensp;使用js将图片背景外置,减少模板体积和加快加载速度,文件类型:&amp;ensp;frm (FR10.0)版本:&amp;ensp;v1.0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-18T05:39:37.416Z">
+<meta property="og:updated_time" content="2019-07-25T08:14:03.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Finereport开发指北 - 外置图片背景">
 <meta name="twitter:description" content="功能:&amp;ensp; 外置图片使用场景:&amp;ensp;使用js将图片背景外置,减少模板体积和加快加载速度,文件类型:&amp;ensp;frm (FR10.0)版本:&amp;ensp;v1.0">
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-18T13:39:37+08:00">
-                2019-07-18
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-25T16:14:03+08:00">
+                2019-07-25
               </time>
             
           </span>
@@ -406,7 +406,7 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//总背景替换</span></span><br><span class="line"><span class="comment">//可以通过将素材保存到WebReport/picture目录下，通过js事件引用</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">".fr-quick-adaptive-layout"</span>).css(</span><br><span class="line">        <span class="string">"background"</span>, <span class="string">"url($&#123;serverURL&#125;/webroot/&#123;$此处放置需要设置为外置的图片名称&#125;;) center center / contain no-repeat "</span>)</span><br><span class="line">&#125;, <span class="number">200</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//报表快背景替换</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"div[widgetname='REPORT1'].fr-titlelayout"</span>).css(</span><br><span class="line">        <span class="string">"background"</span>, <span class="string">"url($&#123;serverURL&#125;/webroot/&#123;$此处放置需要设置为外置的图片名称&#125;;) center center / contain no-repeat "</span>)</span><br><span class="line">&#125;, <span class="number">200</span>);</span><br><span class="line"><span class="comment">//更换名称，记得大写。</span></span><br></pre></td></tr></table></figure>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//总背景替换</span></span><br><span class="line"><span class="comment">//可以通过将素材保存到WebReport/picture目录下，通过js事件引用</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">".fr-quick-adaptive-layout"</span>).css(</span><br><span class="line">        <span class="string">"background"</span>, <span class="string">"url($&#123;serverURL&#125;/webroot/&#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125;;) center center / contain no-repeat "</span>)</span><br><span class="line">&#125;, <span class="number">200</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//报表快背景替换</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"div[widgetname='REPORT1']"</span>).css(</span><br><span class="line">        <span class="string">"background"</span>, <span class="string">"url($&#123;serverURL&#125;/webroot/  &#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125; ;) center center / contain no-repeat "</span>)</span><br><span class="line">&#125;, <span class="number">200</span>);</span><br><span class="line"><span class="comment">//更换名称，记得大写。</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><h4 id="版本问题"><a href="#版本问题" class="headerlink" title="版本问题"></a>版本问题</h4><ul>
 <li><strong>低版本FR请修改对应路径信息</strong></li>
@@ -470,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/17/FR-Finereport常用操作-4/" rel="next" title="Finereport开发指北 - 标签轮播">
-                <i class="fa fa-chevron-left"></i> Finereport开发指北 - 标签轮播
+              <a href="/2019/07/18/FR-Finereport常用操作-7/" rel="next" title="Finereport开发指北 - 插件开发看门">
+                <i class="fa fa-chevron-left"></i> Finereport开发指北 - 插件开发看门
               </a>
             
           </div>
@@ -480,8 +480,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/18/FR-Finereport常用操作-7/" rel="prev" title="Finereport开发指北 - 插件开发看门">
-                Finereport开发指北 - 插件开发看门 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/18/FR-Finereport常用操作-5/" rel="prev" title="Finereport开发指北 - 消除滚动条">
+                Finereport开发指北 - 消除滚动条 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,7 +590,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
