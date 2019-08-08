@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 侧边栏划框]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%92%E6%A1%86%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 侧边框划框使用场景:&ensp;用于多个同层级大屏手动切换并且需要一定的美观度文件类型:&ensp;frm (FR10.0)版本:&ensp;v0.8 样例12345678910111213setTimeout( function() &#123; $("div[widgetname = 'Wid_name']").css("left","-150px"); // 此处需要注意 $("div[widgetname = 'Wid_name']").mouseover(function()&#123; startmove(0);&#125;) $("div[widgetname = 'Wid_name']").mouseleave(function()&#123; startmove(-200);&#125;) &#125;,50 );function startmove(target)&#123; setTimeout(function ()&#123; $("div[widgetname = 'Wid_name']").animate(&#123;left:target+'px'&#125;); &#125;,50)&#125; 实例效果 备注开发建议 此方法还在调试阶段,目前存在弹出]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Finereport开发指北 - 消除滚动条]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%B6%88%E9%99%A4%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 消除页面模块滚动条使用场景:&ensp;用于布局不规范引发的出现滚动条或跑马灯美观问题消除滚动条文件类型:&ensp;frm版本:&ensp;v1.0 样例12345setInterval( function()&#123; $("div[widgetname = 'Wid_name']").find(".reportContent")[0].style.overflow="hidden"; // 修改控件名称 &#125;,1000); 核心内容解释&emsp; 如果页面需要不断的进行刷新建议消除滚动条使用setInterval(),否则使用setTimeout()]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Finereport开发指北 - 插件开发看门]]></title>
     <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%2F</url>
     <content type="text"><![CDATA[一句话被双引号引用之后就觉得一下子充满了深度,插件也是 ---- Mr 大白 之所以是看门,因为可能你完成此篇分享之后,连门槛都摸不到,所以此篇内容为帮助理解 环境准备 请务必坚持完成环境的搭建,因为从我的入门水平来理解,最难得可能就是这个]]></content>
@@ -41,6 +16,31 @@
     <title><![CDATA[Finereport开发指北 - 外置图片背景]]></title>
     <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E5%A4%96%E7%BD%AE%E5%9B%BE%E7%89%87%E8%83%8C%E6%99%AF%2F</url>
     <content type="text"><![CDATA[功能:&ensp; 外置图片使用场景:&ensp;使用js将图片背景外置,减少模板体积和加快加载速度,文件类型:&ensp;frm (FR10.0)版本:&ensp;v1.0 样例1234567891011121314//总背景替换//可以通过将素材保存到WebReport/picture目录下，通过js事件引用setTimeout(function () &#123; $(".fr-quick-adaptive-layout").css( "background", "url($&#123;serverURL&#125;/webroot/&#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125;;) center center / contain no-repeat ")&#125;, 200);//报表快背景替换setTimeout(function () &#123; $("div[widgetname='REPORT1']").css( "background", "url($&#123;serverURL&#125;/webroot/ &#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125; ;) center center / contain no-repeat ")&#125;, 200);//更换名称，记得大写。 备注版本问题 低版本FR请修改对应路径信息 相关插件 关于截止我记录此条指北时,外置图片背景插件的健壮性仍然存在问题,且远程开发模式下无法使用,故引用此JS处理图片素材 开发建议 当单纯引用背景时 ( 例如为标题添加边框,图表添加边框等 )建议使用标签控件作为背景载体 图片应放置在与WEB-INF同级的目录下 针对CSS属性的讲解 关于CSS属性问题待补充]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Finereport开发指北 - 侧边栏划框]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%92%E6%A1%86%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 侧边框划框使用场景:&ensp;用于多个同层级大屏手动切换并且需要一定的美观度文件类型:&ensp;frm (FR10.0)版本:&ensp;v0.8 样例12345678910111213setTimeout( function() &#123; $("div[widgetname = 'Wid_name']").css("left","-150px"); // 此处需要注意 $("div[widgetname = 'Wid_name']").mouseover(function()&#123; startmove(0);&#125;) $("div[widgetname = 'Wid_name']").mouseleave(function()&#123; startmove(-200);&#125;) &#125;,50 );function startmove(target)&#123; setTimeout(function ()&#123; $("div[widgetname = 'Wid_name']").animate(&#123;left:target+'px'&#125;); &#125;,50)&#125; 实例效果 备注开发建议 此方法还在调试阶段,目前存在弹出]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Finereport开发指北 - 消除滚动条]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%B6%88%E9%99%A4%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 消除页面模块滚动条使用场景:&ensp;用于布局不规范引发的出现滚动条或跑马灯美观问题消除滚动条文件类型:&ensp;frm版本:&ensp;v1.0 样例12345setInterval( function()&#123; $("div[widgetname = 'Wid_name']").find(".reportContent")[0].style.overflow="hidden"; // 修改控件名称 &#125;,1000); 核心内容解释&emsp; 如果页面需要不断的进行刷新建议消除滚动条使用setInterval(),否则使用setTimeout()]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
@@ -137,18 +137,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[前端开荒游记 (一)]]></title>
-    <url>%2F2019%2F07%2F04%2F%E5%89%8D%E7%AB%AF-%E5%89%8D%E7%AB%AF%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
-    <content type="text"><![CDATA[第一天,感觉学会了一切,又感觉一切都没开始]]></content>
-      <categories>
-        <category>技术</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[java开荒游记-壹 "浅尝辄止还是钻研到底"]]></title>
     <url>%2F2019%2F07%2F04%2Fjava-java%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
     <content type="text"><![CDATA[知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。物有本末，事有终始，知所先后，则近道矣. 《大学》 &emsp;浅尝辄止不一定是坏事情,在有限的时间里该专一的做一件事情还是发散开来这本身就没有一个确定的答案,在我眼中这和工作仿佛有莫大的联系.&emsp;很荣幸我选择了一个和年龄不相匹配的工作,它需要我有足够充实的积淀应对风险,却没有给我足够成长的时间( 不过这原本就不是公司该考虑的问题 ),所以我需要时间,相比深耕技术,我可能现阶段更需要看似渊博的见识和足够强的理解能力,因此我需要急切的指导这项技能的深浅是如何定义的,我该”止于何处” 转载自 java入门请不要放弃 其中作者解释为: 5 精通 必须了解其基本原理并且可以熟练应用 闭着眼睛都能敲出代码4 掌握 在需要的时候可以通过查询帮助文档 或者网上资料的方式完成功能3 需要留下深刻的记忆 把代码照着敲几遍 记得住就记 记不住回头查阅即可2 在记忆中留下这个知识点 在以后学习过程中看到了 有眼熟的感觉即可1 不需要学（看一眼就行了）]]></content>
@@ -158,6 +146,18 @@
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端开荒游记 (一)]]></title>
+    <url>%2F2019%2F07%2F04%2F%E5%89%8D%E7%AB%AF-%E5%89%8D%E7%AB%AF%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
+    <content type="text"><![CDATA[第一天,感觉学会了一切,又感觉一切都没开始]]></content>
+      <categories>
+        <category>技术</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
 </search>
