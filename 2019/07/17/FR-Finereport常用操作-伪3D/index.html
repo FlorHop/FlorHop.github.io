@@ -105,20 +105,20 @@
 
 
 
-<meta name="description" content="功能:&amp;ensp;遍历图表各分类,并轮播显示标签使用场景: 页面欠缺动效且用户有需求时文件类型: frm版本:     v1.0">
+<meta name="description" content="功能:&amp;ensp;使用 transform 属性进行模块的倾斜,产生伪3D的效果使用场景: 需要临场感较强且页面内容相对少的大屏样式中文件类型: frm版本:     v1.0">
 <meta name="keywords" content="JavaScript,CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Finereport开发指北 - 标签轮播">
-<meta property="og:url" content="https://florhop.github.io/2019/07/17/FR-Finereport常用操作-4/index.html">
+<meta property="og:title" content="Finereport开发指北 - 伪3D界面">
+<meta property="og:url" content="https://florhop.github.io/2019/07/17/FR-Finereport常用操作-伪3D/index.html">
 <meta property="og:site_name" content="Blog of Chenxi Wang">
-<meta property="og:description" content="功能:&amp;ensp;遍历图表各分类,并轮播显示标签使用场景: 页面欠缺动效且用户有需求时文件类型: frm版本:     v1.0">
+<meta property="og:description" content="功能:&amp;ensp;使用 transform 属性进行模块的倾斜,产生伪3D的效果使用场景: 需要临场感较强且页面内容相对少的大屏样式中文件类型: frm版本:     v1.0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://florhop.github.io/uploads/FR/carousel/demo.gif">
-<meta property="og:updated_time" content="2019-07-18T02:55:53.769Z">
+<meta property="og:image" content="https://florhop.github.io/uploads/FR/3D/demo.png">
+<meta property="og:updated_time" content="2019-08-08T01:24:28.575Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Finereport开发指北 - 标签轮播">
-<meta name="twitter:description" content="功能:&amp;ensp;遍历图表各分类,并轮播显示标签使用场景: 页面欠缺动效且用户有需求时文件类型: frm版本:     v1.0">
-<meta name="twitter:image" content="https://florhop.github.io/uploads/FR/carousel/demo.gif">
+<meta name="twitter:title" content="Finereport开发指北 - 伪3D界面">
+<meta name="twitter:description" content="功能:&amp;ensp;使用 transform 属性进行模块的倾斜,产生伪3D的效果使用场景: 需要临场感较强且页面内容相对少的大屏样式中文件类型: frm版本:     v1.0">
+<meta name="twitter:image" content="https://florhop.github.io/uploads/FR/3D/demo.png">
 
 
 
@@ -148,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="https://florhop.github.io/2019/07/17/FR-Finereport常用操作-4/">
+  <link rel="canonical" href="https://florhop.github.io/2019/07/17/FR-Finereport常用操作-伪3D/">
 
 
 
 
 
-  <title>Finereport开发指北 - 标签轮播 | Blog of Chenxi Wang</title>
+  <title>Finereport开发指北 - 伪3D界面 | Blog of Chenxi Wang</title>
   
 
 
@@ -291,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://florhop.github.io/2019/07/17/FR-Finereport常用操作-4/">
+    <link itemprop="mainEntityOfPage" href="https://florhop.github.io/2019/07/17/FR-Finereport常用操作-伪3D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大白">
@@ -308,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Finereport开发指北 - 标签轮播</h1>
+          <h1 class="post-title" itemprop="name headline">Finereport开发指北 - 伪3D界面</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-18T10:55:53+08:00">
-                2019-07-18
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-08T09:24:28+08:00">
+                2019-08-08
               </time>
             
           </span>
@@ -404,17 +404,14 @@
 
       
         <blockquote>
-<p>功能:&ensp;遍历图表各分类,并轮播显示标签<br>使用场景: 页面欠缺动效且用户有需求时<br>文件类型: frm<br>版本:     v1.0  </p>
+<p>功能:&ensp;使用 <strong>transform</strong> 属性进行模块的倾斜,产生伪3D的效果<br>使用场景: 需要临场感较强且页面内容相对少的大屏样式中<br>文件类型: frm<br>版本:     v1.0  </p>
 </blockquote>
 <a id="more"></a>
 
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><blockquote>
-<p>引用自 @Chijun.Huang</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> vanchart = FR.Chart.WebUtils.getChart(<span class="string">'map'</span>).vanCharts.charts[<span class="number">0</span>];</span><br><span class="line">        openAutoTooltipCarouselDelay = <span class="number">3000</span>;</span><br><span class="line">    openAutoTooltipCarousel();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">openAutoTooltipCarousel</span>(<span class="params">ele</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> series = vanchart.series; <span class="comment">// 获取chart下的所有系列</span></span><br><span class="line">        <span class="comment">// 获取系列第一个系列的所有数据点</span></span><br><span class="line">        <span class="comment">// 注意，每次只能显示一个数据点提示，如果需要显示多个数据点的提示内容，可以在plotOptions里面开启数据提示共享</span></span><br><span class="line">        <span class="keyword">var</span> points = series[<span class="number">0</span>].points,</span><br><span class="line">            pointsLen = points.length;</span><br><span class="line">        <span class="comment">// 默认的提示轮播从第一个点开始</span></span><br><span class="line">        <span class="keyword">var</span> pointIndex = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">window</span>.openAutoTooltipCarouselTimer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 遍历series下面每个系列的点</span></span><br><span class="line">            <span class="comment">// 使用vanchart.showTooltip依次展示不同索引的数据点</span></span><br><span class="line">            vanchart.showTooltip(points[pointIndex]);</span><br><span class="line"></span><br><span class="line">            pointIndex &lt; pointsLen - <span class="number">1</span> ? pointIndex++ : pointIndex = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        &#125;, openAutoTooltipCarouselDelay)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="number">3000</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(</span><br><span class="line">	<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		$(<span class="string">"div[widgetname= 'Wid_name' ]"</span>).css(<span class="string">"transform"</span>,<span class="string">"perspective(500px) rotateY(5deg)"</span>); <span class="comment">// Wid_name 修改为模块名称</span></span><br><span class="line">	&#125;,<span class="number">1000</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<h3 id="实际效果"><a href="#实际效果" class="headerlink" title="实际效果"></a>实际效果</h3><p><img src="/uploads/FR/carousel/demo.gif" alt="cs"></p>
-<h3 id="核心内容解释"><a href="#核心内容解释" class="headerlink" title="核心内容解释"></a>核心内容解释</h3><p>&emsp; 该方法不仅限于地图,柱形图,饼图,折线图等均可使用,需自行调节<strong>vanchart</strong>对象的指向</p>
+<h3 id="实际效果"><a href="#实际效果" class="headerlink" title="实际效果"></a>实际效果</h3><p><img src="/uploads/FR/3D/demo.png" alt="cs"></p>
+<h3 id="核心内容解释"><a href="#核心内容解释" class="headerlink" title="核心内容解释"></a>核心内容解释</h3><p>&emsp; 建议将透视模块以左右上下分类,置于画布块中.( 对报表块进行透视容易出现景深不同或边框被遮盖的现象 )</p>
 
       
     </div>
@@ -435,7 +432,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://florhop.github.io/2019/07/17/FR-Finereport常用操作-4/" title="Finereport开发指北 - 标签轮播">https://florhop.github.io/2019/07/17/FR-Finereport常用操作-4/</a>
+    <a href="https://florhop.github.io/2019/07/17/FR-Finereport常用操作-伪3D/" title="Finereport开发指北 - 伪3D界面">https://florhop.github.io/2019/07/17/FR-Finereport常用操作-伪3D/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -465,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/16/FR-Finereport常用操作-2/" rel="next" title="Finereport开发指北 - 荧光字">
-                <i class="fa fa-chevron-left"></i> Finereport开发指北 - 荧光字
+              <a href="/2019/07/17/FR-Finereport常用操作-标签轮播/" rel="next" title="Finereport开发指北 - 标签轮播">
+                <i class="fa fa-chevron-left"></i> Finereport开发指北 - 标签轮播
               </a>
             
           </div>
@@ -475,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/17/FR-Finereport常用操作-3/" rel="prev" title="Finereport开发指北 - 伪3D界面">
-                Finereport开发指北 - 伪3D界面 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/18/FR-Finereport常用操作-插件开发系列/" rel="prev" title="Finereport开发指北 - 插件开发看门">
+                Finereport开发指北 - 插件开发看门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
