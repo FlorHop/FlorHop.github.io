@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 插件开发看门]]></title>
+    <title><![CDATA[Finereprot开发指北 - 报表块进度条]]></title>
+    <url>%2F2019%2F08%2F15%2FFR-Finereprot%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8A%A5%E8%A1%A8%E5%9D%97%E8%BF%9B%E5%BA%A6%E6%9D%A1%2F</url>
+    <content type="text"><![CDATA[功能: &ensp;1. 在报表块中使用进度条使用场景: 普通展示报表或者看板文件类型: cpt,frm版本: v1.0 简洁风格进度条效果展示 实现方式 可直接粘贴至设计器,修改H3为需要显示的单元格 1"&lt;table cellpadding=0 cellspacing=0 width=100% border=0&gt;&lt;tr&gt;&lt;td width=" + (ROUND((H3 * 80), 2)*0.9) + "%&gt;&lt;table width=100% cellpadding=0 cellspacing=0 &gt;&lt;tr&gt;&lt;td bgcolor=#2a6ca6 style='border-radius:4px'&gt; &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;td width="+ (1-(ROUND((H3 * 80), 2)*0.9)) +"%&gt;&lt;table width = 100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td align=left &gt;&amp;ensp;"+ (H3*100) +"%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" 内容注解&emsp;待补充… 动态进度条效果展示]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Finereport开发指北 - 插件开发找门]]></title>
     <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%2F</url>
-    <content type="text"><![CDATA[一句话被双引号引用之后就觉得一下子充满了深度,插件也是 ---- Mr 大白 之所以是看门,因为可能你完成此篇分享之后,连门槛都摸不到,所以此篇内容为帮助理解 环境准备 请务必坚持完成环境的搭建,因为从我的入门水平来理解,最难得可能就是这个]]></content>
+    <content type="text"><![CDATA[一句话被双引号引用之后就觉得一下子充满了深度,插件也是 ---- Mr 大白 之所以是找门,因为可能你完成此篇分享之后,连门槛都摸不到,所以此篇内容为帮助理解 环境准备 请务必坚持完成环境的搭建,因为从我的入门水平来理解,最难得可能就是这个]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
@@ -26,18 +39,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 侧边栏划框]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%92%E6%A1%86%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 侧边框划框使用场景:&ensp;用于多个同层级大屏手动切换并且需要一定的美观度文件类型:&ensp;frm (FR10.0)版本:&ensp;v0.8 样例12345678910111213setTimeout( function() &#123; $("div[widgetname = 'Wid_name']").css("left","-150px"); // 此处需要注意 $("div[widgetname = 'Wid_name']").mouseover(function()&#123; startmove(0);&#125;) $("div[widgetname = 'Wid_name']").mouseleave(function()&#123; startmove(-200);&#125;) &#125;,50 );function startmove(target)&#123; setTimeout(function ()&#123; $("div[widgetname = 'Wid_name']").animate(&#123;left:target+'px'&#125;); &#125;,50)&#125; 实例效果 备注开发建议 此方法还在调试阶段,目前存在弹出]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Finereport开发指北 - 消除滚动条]]></title>
     <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%B6%88%E9%99%A4%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
     <content type="text"><![CDATA[功能:&ensp; 消除页面模块滚动条使用场景:&ensp;用于布局不规范引发的出现滚动条或跑马灯美观问题消除滚动条文件类型:&ensp;frm版本:&ensp;v1.0 样例12345setInterval( function()&#123; $("div[widgetname = 'Wid_name']").find(".reportContent")[0].style.overflow="hidden"; // 修改控件名称 &#125;,1000); 核心内容解释&emsp; 如果页面需要不断的进行刷新建议消除滚动条使用setInterval(),否则使用setTimeout()]]></content>
@@ -51,9 +52,21 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 标签轮播]]></title>
-    <url>%2F2019%2F07%2F17%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%A0%87%E7%AD%BE%E8%BD%AE%E6%92%AD%2F</url>
-    <content type="text"><![CDATA[功能:&ensp;遍历图表各分类,并轮播显示标签使用场景: 页面欠缺动效且用户有需求时文件类型: frm版本: v1.0 样例 引用自 @Chijun.Huang 123456789101112131415161718192021222324setTimeout(function () &#123; var vanchart = FR.Chart.WebUtils.getChart('map').vanCharts.charts[0]; openAutoTooltipCarouselDelay = 3000; openAutoTooltipCarousel(); function openAutoTooltipCarousel(ele) &#123; var series = vanchart.series; // 获取chart下的所有系列 // 获取系列第一个系列的所有数据点 // 注意，每次只能显示一个数据点提示，如果需要显示多个数据点的提示内容，可以在plotOptions里面开启数据提示共享 var points = series[0].points, pointsLen = points.length; // 默认的提示轮播从第一个点开始 var pointIndex = 0; window.openAutoTooltipCarouselTimer = setInterval(function () &#123; // 遍历series下面每个系列的点 // 使用vanchart.showTooltip依次展示不同索引的数据点 vanchart.showTooltip(points[pointIndex]); pointIndex &lt; pointsLen - 1 ? pointIndex++ : pointIndex = 0; &#125;, openAutoTooltipCarouselDelay) &#125;&#125;, 3000) 实际效果 核心内容解释&emsp; 该方法不仅限于地图,柱形图,饼图,折线图等均可使用,需自行调节vanchart对象的指向]]></content>
+    <title><![CDATA[Finereport开发指北 - 侧边栏划框]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%92%E6%A1%86%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 侧边框划框使用场景:&ensp;用于多个同层级大屏手动切换并且需要一定的美观度文件类型:&ensp;frm (FR10.0)版本:&ensp;v0.8 样例12345678910111213setTimeout( function() &#123; $("div[widgetname = 'Wid_name']").css("left","-150px"); // 此处需要注意 $("div[widgetname = 'Wid_name']").mouseover(function()&#123; startmove(0);&#125;) $("div[widgetname = 'Wid_name']").mouseleave(function()&#123; startmove(-200);&#125;) &#125;,50 );function startmove(target)&#123; setTimeout(function ()&#123; $("div[widgetname = 'Wid_name']").animate(&#123;left:target+'px'&#125;); &#125;,50)&#125; 实例效果 备注开发建议 此方法还在调试阶段,目前存在弹出]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Finereport开发指北 - 伪3D界面]]></title>
+    <url>%2F2019%2F07%2F17%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BC%AA3D%2F</url>
+    <content type="text"><![CDATA[功能:&ensp;使用 transform 属性进行模块的倾斜,产生伪3D的效果使用场景: 需要临场感较强且页面内容相对少的大屏样式中文件类型: frm版本: v1.0 样例12345setTimeout( function () &#123; $("div[widgetname= 'Wid_name' ]").css("transform","perspective(500px) rotateY(5deg)"); // Wid_name 修改为模块名称 &#125;,1000) 实际效果 核心内容解释&emsp; 建议将透视模块以左右上下分类,置于画布块中.( 对报表块进行透视容易出现景深不同或边框被遮盖的现象 )]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
@@ -64,9 +77,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 伪3D界面]]></title>
-    <url>%2F2019%2F07%2F17%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BC%AA3D%2F</url>
-    <content type="text"><![CDATA[功能:&ensp;使用 transform 属性进行模块的倾斜,产生伪3D的效果使用场景: 需要临场感较强且页面内容相对少的大屏样式中文件类型: frm版本: v1.0 样例12345setTimeout( function () &#123; $("div[widgetname= 'Wid_name' ]").css("transform","perspective(500px) rotateY(5deg)"); // Wid_name 修改为模块名称 &#125;,1000) 实际效果 核心内容解释&emsp; 建议将透视模块以左右上下分类,置于画布块中.( 对报表块进行透视容易出现景深不同或边框被遮盖的现象 )]]></content>
+    <title><![CDATA[Finereport开发指北 - 标签轮播]]></title>
+    <url>%2F2019%2F07%2F17%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%A0%87%E7%AD%BE%E8%BD%AE%E6%92%AD%2F</url>
+    <content type="text"><![CDATA[功能:&ensp;遍历图表各分类,并轮播显示标签使用场景: 页面欠缺动效且用户有需求时文件类型: frm版本: v1.0 样例 引用自 @Chijun.Huang 123456789101112131415161718192021222324setTimeout(function () &#123; var vanchart = FR.Chart.WebUtils.getChart('map').vanCharts.charts[0]; openAutoTooltipCarouselDelay = 3000; openAutoTooltipCarousel(); function openAutoTooltipCarousel(ele) &#123; var series = vanchart.series; // 获取chart下的所有系列 // 获取系列第一个系列的所有数据点 // 注意，每次只能显示一个数据点提示，如果需要显示多个数据点的提示内容，可以在plotOptions里面开启数据提示共享 var points = series[0].points, pointsLen = points.length; // 默认的提示轮播从第一个点开始 var pointIndex = 0; window.openAutoTooltipCarouselTimer = setInterval(function () &#123; // 遍历series下面每个系列的点 // 使用vanchart.showTooltip依次展示不同索引的数据点 vanchart.showTooltip(points[pointIndex]); pointIndex &lt; pointsLen - 1 ? pointIndex++ : pointIndex = 0; &#125;, openAutoTooltipCarouselDelay) &#125;&#125;, 3000) 实际效果 核心内容解释&emsp; 该方法不仅限于地图,柱形图,饼图,折线图等均可使用,需自行调节vanchart对象的指向]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
@@ -92,25 +105,13 @@
   <entry>
     <title><![CDATA[Finereport开发指北 - 界面刷新]]></title>
     <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E7%95%8C%E9%9D%A2%E5%88%B7%E6%96%B0%2F</url>
-    <content type="text"><![CDATA[功能:&ensp;1.刷新表单中的元素,实现数据的重新载入&emsp;&emsp;&emsp;2.全屏刷新时去除加载动画使用场景: 需要数据变化或者界面样式变化的表单设计文件类型: frm版本: v1.0 样例12345678/* 刷新部分 */var Wid = this.options.form.getWidgetByName('Wid_name'); setInterval(function() &#123; Wid.gotoPage(1,"&#123;&#125;",true); // 修改控件名, &#125;, 1000);/* 取消页面刷新加载动画 */FR.HtmlLoader.loadingEffect=function()&#123;&#125; 关于 gotoPage()函数 的解释 引用自 @Armstrong noCache = NULL1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;"); &emsp;此时报表块刷新的数据从缓存里面取，不重新计算 noCache = true1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;",true); &emsp;此时重新计算所有报表块 noCache = lazy (推荐)1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;","lazy"); &emsp;此时重新计算单个报表块 开发延伸 当面对客户针对某个控件进行带参刷新时可放弃常用的使用界面控件赋值的方式进行传参而采用gotopage()进行带参刷新]]></content>
+    <content type="text"><![CDATA[功能:&ensp;1.刷新表单中的元素,实现数据的重新载入&emsp;&emsp;&emsp;2.全屏刷新时去除加载动画使用场景: 需要数据变化或者界面样式变化的表单设计文件类型: frm版本: v1.0 报表块刷新样例12345678/* 刷新部分 */var Wid = this.options.form.getWidgetByName('Wid_name'); setInterval(function() &#123; Wid.gotoPage(1,"&#123;&#125;",true); // 修改控件名, &#125;, 1000);/* 取消页面刷新加载动画 */FR.HtmlLoader.loadingEffect=function()&#123;&#125; 关于 gotoPage()函数 的解释 引用自 @Armstrong noCache = NULL1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;"); &emsp;此时报表块刷新的数据从缓存里面取，不重新计算 noCache = true1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;",true); &emsp;此时重新计算所有报表块 noCache = lazy (推荐)1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;","lazy"); &emsp;此时重新计算单个报表块 开发延伸 当面对客户针对某个报表块进行带参刷新时可放弃常用的使用界面控件赋值的方式进行传参而采用gotopage()进行带参刷新]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[PMBOK 初读-壹]]></title>
-    <url>%2F2019%2F07%2F04%2FPMP-PMBOK%E5%88%9D%E8%AF%BB-1%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>项目管理</category>
-      </categories>
-      <tags>
-        <tag>PMP</tag>
-        <tag>阅读体会</tag>
       </tags>
   </entry>
   <entry>
@@ -123,6 +124,18 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端开荒游记 (一)]]></title>
+    <url>%2F2019%2F07%2F04%2F%E5%89%8D%E7%AB%AF-%E5%89%8D%E7%AB%AF%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
+    <content type="text"><![CDATA[开荒记录]]></content>
+      <categories>
+        <category>技术</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -146,18 +159,6 @@
       </categories>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[前端开荒游记 (一)]]></title>
-    <url>%2F2019%2F07%2F04%2F%E5%89%8D%E7%AB%AF-%E5%89%8D%E7%AB%AF%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
-    <content type="text"><![CDATA[第一天,感觉学会了一切,又感觉一切都没开始]]></content>
-      <categories>
-        <category>技术</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
 </search>
