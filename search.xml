@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Kettle使用java进行数据处理以及调用外部包]]></title>
+    <url>%2F2019%2F08%2F27%2FKTEELT-kettle%E4%BD%BF%E7%94%A8java%E4%BB%A5%E5%8F%8A%E8%B0%83%E7%94%A8%E5%A4%96%E9%83%A8%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[本文以 kettle 调用 java 生成集装箱校验位为例,阐述Kettle调用java的基础入门 场景描述用户原始需求&emsp;用户提供的原始数据为10位集装箱编号,希望通过底层数据处理拼接集装箱校验位 潜在需求(校验位生成规则) 原文链接：https://blog.csdn.net/rnZuoZuo/article/details/30034005 标准集装箱箱号由11位编码组成，包括三个部分： 第一部分由4位英文字母组成。前三位代码 (Owner Code) 主要说明箱主、经营人，第四位代码说明集装箱的类型。列如CBHU 开头的标准集装箱是表明箱主和经营人为中远集运。 第二部分由6位数字组成。是箱体注册码（Registration Code），用于一个集装箱箱体持有的唯一标识。 第三部分为校验码（Check Digit）由前4位字母和6位数字经过校验规则运算得到，用于识别在校验时是否发生错误。即第11位数字。 根据校验规则箱号的每个字母和数字都有一个运算的对应值。箱号的前10位字母和数字的对应值从0到Z对应数值为0到38，11、22、33不能对11取模数，所以要除去第N位的箱号对应值再分别乘以2的N－1次方 （N=1，2，3………..10）(对应值不含有11,22,33) 使用公式表示为: S=∑Ci*2() 问题思考该工作需要进行大量字符的匹配和平方操作,首先排除在前端展现层处理的方法,方法大致确定为存储过程或者kettle中处理.使用存储过程不利于后期项目的维护.(PS: 我没想到好的记录存储过程的方式),因此该过程笔者打算在kettle中处理.若使用kettle进行这项操作,工作的过程涉及比较多字符匹配和逻辑运算,因此使用java脚本进行数据处理 笔者也有构思过其他的实现方式,但是考虑工作量和复杂程度,最后选择了该方式,如果您有其他的见解欢迎留言:) 方法简述Kettle 使用的控件 如上图所示,输入信息为集装箱列(列名为Container_number),在java脚本环节作为输入参数,输出Container_number以及拼接校验位后的Container_number_2,在第三部分完成更新操作 代码部分 在kettle界面下无法使用 &lt;&gt; 数据类型,因此为使用哈希,将方法封装为外部包供kettle调用 kettle 中 java 脚本12345678910111213141516171819202122232425import check.Container;public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws KettleException &#123; if (first) &#123; first = false; &#125; Object[] r = getRow(); if (r == null) &#123; setOutputDone(); return false; &#125; r = createOutputRow(r, data.outputRowMeta.size()); Container test = new Container(); String CONTAINER_NUMBER = get(Fields.In, "CONTAINER_NUMBER").getString(r); String CONTAINER_NUMBER_2 = test.checkout(CONTAINER_NUMBER); get(Fields.Out, "CONTAINER_NUMBER_2").setValue(r,CONTAINER_NUMBER_2); putRow(data.outputRowMeta, r); return true;&#125; 集装箱校验位计算方法部分12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061/*** 补齐集装箱校验位* @param: containerNumber 集装箱编码* @return: Container_number 集装箱编码+校验位* @version: 1.0* @time: 2019-8-20 14:11:50* @author: flor*/public String checkout(String containerNumber)&#123; // 判断输入字符是否为集装箱待验证编码 &amp; 本次仅以字符数量作为判断标准 int len = containerNumber.length(); if (len != 10 ) &#123; return containerNumber; &#125; // 将匹配规则生成哈希 Map&lt;String, Integer&gt; mapofCode = new HashMap&lt;String, Integer&gt;(); mapofCode.put("A", 10); mapofCode.put("B", 12); mapofCode.put("C", 13); mapofCode.put("D", 14); mapofCode.put("E", 15); mapofCode.put("F", 16); mapofCode.put("G", 17); mapofCode.put("H", 18); mapofCode.put("I", 19); mapofCode.put("J", 20); mapofCode.put("K", 21); mapofCode.put("L", 23); mapofCode.put("M", 24); mapofCode.put("N", 25); mapofCode.put("O", 26); mapofCode.put("P", 27); mapofCode.put("Q", 28); mapofCode.put("R", 29); mapofCode.put("S", 30); mapofCode.put("T", 31); mapofCode.put("U", 32); mapofCode.put("V", 34); mapofCode.put("W", 35); mapofCode.put("X", 36); mapofCode.put("Y", 37); mapofCode.put("Z", 38); // 计算 String constainerCode = containerNumber; int positon = 1; int sum = 0; for (int i = 0; i &lt; constainerCode.length() ; i++) &#123; if (mapofCode.containsKey(constainerCode.substring(i, i + 1))) &#123; sum += Double.valueOf(mapofCode.get(constainerCode.substring(i, i + 1))) * Math.pow(2, positon - 1); &#125; else &#123; sum += Double.valueOf(constainerCode.substring(i, i + 1)) * Math.pow(2, positon - 1); &#125; positon++; &#125; int checkdigit = sum % 11 % 10; String Container_number = containerNumber.concat(checkdigit + ""); return Container_number;&#125; 关于效率问题施工中 (*･ω&lt; )]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Kettle</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Finereprot开发指北 - 报表块进度条]]></title>
     <url>%2F2019%2F08%2F15%2FFR-Finereprot%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8A%A5%E8%A1%A8%E5%9D%97%E8%BF%9B%E5%BA%A6%E6%9D%A1%2F</url>
     <content type="text"><![CDATA[功能: &ensp;1. 在报表块中使用进度条使用场景: 普通展示报表或者看板文件类型: cpt,frm版本: v1.0 简洁风格进度条效果展示 实现方式 可直接粘贴至设计器,修改H3为需要显示的单元格 1"&lt;table cellpadding=0 cellspacing=0 width=100% border=0&gt;&lt;tr&gt;&lt;td width=" + (ROUND((H3 * 80), 2)*0.9) + "%&gt;&lt;table width=100% cellpadding=0 cellspacing=0 &gt;&lt;tr&gt;&lt;td bgcolor=#2a6ca6 style='border-radius:4px'&gt; &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;td width="+ (1-(ROUND((H3 * 80), 2)*0.9)) +"%&gt;&lt;table width = 100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td align=left &gt;&amp;ensp;"+ (H3*100) +"%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" 内容注解&emsp;待补充… 动态进度条效果展示]]></content>
@@ -11,6 +23,31 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Finereport开发指北 - 外置图片背景]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E5%A4%96%E7%BD%AE%E5%9B%BE%E7%89%87%E8%83%8C%E6%99%AF%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 外置图片使用场景:&ensp;使用js将图片背景外置,减少模板体积和加快加载速度,文件类型:&ensp;frm (FR10.0)版本:&ensp;v1.0 样例1234567891011121314//总背景替换//可以通过将素材保存到WebReport/picture目录下，通过js事件引用setTimeout(function () &#123; $(".fr-quick-adaptive-layout").css( "background", "url($&#123;serverURL&#125;/webroot/&#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125;;) center center / contain no-repeat ")&#125;, 200);//报表快背景替换setTimeout(function () &#123; $("div[widgetname='REPORT1']").css( "background", "url($&#123;serverURL&#125;/webroot/ &#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125; ;) center center / contain no-repeat ")&#125;, 200);//更换名称，记得大写。 备注版本问题 低版本FR请修改对应路径信息 相关插件 关于截止我记录此条指北时,外置图片背景插件的健壮性仍然存在问题,且远程开发模式下无法使用,故引用此JS处理图片素材 开发建议 当单纯引用背景时 ( 例如为标题添加边框,图表添加边框等 )建议使用标签控件作为背景载体 图片应放置在与WEB-INF同级的目录下 针对CSS属性的讲解 关于CSS属性问题待补充]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Finereport开发指北 - 插件开发找门]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%2F</url>
+    <content type="text"><![CDATA[一句话被双引号引用之后就觉得一下子充满了深度,插件也是 ---- Mr 大白 之所以是找门,因为可能你完成此篇分享之后,连门槛都摸不到,所以此篇内容为帮助理解 环境准备 请务必坚持完成环境的搭建,因为从我的入门水平来理解,最难得可能就是这个]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -36,31 +73,6 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Finereport开发指北 - 插件开发找门]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%2F</url>
-    <content type="text"><![CDATA[一句话被双引号引用之后就觉得一下子充满了深度,插件也是 ---- Mr 大白 之所以是找门,因为可能你完成此篇分享之后,连门槛都摸不到,所以此篇内容为帮助理解 环境准备 请务必坚持完成环境的搭建,因为从我的入门水平来理解,最难得可能就是这个]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Finereport开发指北 - 外置图片背景]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E5%A4%96%E7%BD%AE%E5%9B%BE%E7%89%87%E8%83%8C%E6%99%AF%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 外置图片使用场景:&ensp;使用js将图片背景外置,减少模板体积和加快加载速度,文件类型:&ensp;frm (FR10.0)版本:&ensp;v1.0 样例1234567891011121314//总背景替换//可以通过将素材保存到WebReport/picture目录下，通过js事件引用setTimeout(function () &#123; $(".fr-quick-adaptive-layout").css( "background", "url($&#123;serverURL&#125;/webroot/&#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125;;) center center / contain no-repeat ")&#125;, 200);//报表快背景替换setTimeout(function () &#123; $("div[widgetname='REPORT1']").css( "background", "url($&#123;serverURL&#125;/webroot/ &#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125; ;) center center / contain no-repeat ")&#125;, 200);//更换名称，记得大写。 备注版本问题 低版本FR请修改对应路径信息 相关插件 关于截止我记录此条指北时,外置图片背景插件的健壮性仍然存在问题,且远程开发模式下无法使用,故引用此JS处理图片素材 开发建议 当单纯引用背景时 ( 例如为标题添加边框,图表添加边框等 )建议使用标签控件作为背景载体 图片应放置在与WEB-INF同级的目录下 针对CSS属性的讲解 关于CSS属性问题待补充]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -90,6 +102,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Finereport开发指北 - 界面刷新]]></title>
+    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E7%95%8C%E9%9D%A2%E5%88%B7%E6%96%B0%2F</url>
+    <content type="text"><![CDATA[功能:&ensp;1.刷新表单中的元素,实现数据的重新载入&emsp;&emsp;&emsp;2.全屏刷新时去除加载动画使用场景: 需要数据变化或者界面样式变化的表单设计文件类型: frm版本: v1.0 报表块刷新样例12345678/* 刷新部分 */var Wid = this.options.form.getWidgetByName('Wid_name'); setInterval(function() &#123; Wid.gotoPage(1,"&#123;&#125;",true); // 修改控件名, &#125;, 1000);/* 取消页面刷新加载动画 */FR.HtmlLoader.loadingEffect=function()&#123;&#125; 关于 gotoPage()函数 的解释 引用自 @Armstrong noCache = NULL1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;"); &emsp;此时报表块刷新的数据从缓存里面取，不重新计算 noCache = true1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;",true); &emsp;此时重新计算所有报表块 noCache = lazy (推荐)1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;","lazy"); &emsp;此时重新计算单个报表块 开发延伸 当面对客户针对某个报表块进行带参刷新时可放弃常用的使用界面控件赋值的方式进行传参而采用gotopage()进行带参刷新]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Finereport开发指北 - 特殊字体]]></title>
     <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E8%8D%A7%E5%85%89%E5%AD%97%2F</url>
     <content type="text"><![CDATA[功能: &ensp;1. 使用CSS中text-shadow属性对字体赋予阴影效果,实现类似荧光的字体特效 &ensp;2. 渐变色字体使用场景: 大屏使用的特效字体文件类型: frm版本: v1.0 荧光字体样例123setTimeout(function()&#123;$(".rows-height-counter").css("text-shadow","0 0 10px #fff, 0 0 15px #0000cd, 0 0 20px #0000cd"); &#125;,50); 实际效果 核心内容解释&emsp;关键在于CSS属性 text-shadow 属性.&emsp;10PX的白色晕+15PX的蓝色晕+20PX的蓝色,底色浅点,字体白色,看起来像荧光.&emsp;.rows-height-counter 指的是对全部报表块文字起作用,想对单个起作用只需要换成 div[widgetname= ‘REPORT1’] 这种即可.该项内容可根据预设模块进行调节,标题建议使用标签控件 渐变字体样例123456789101112setTimeout( function () &#123; $("div[widgetname = 'LABEL'] &gt; table &gt; tbody &gt; tr &gt; td &gt; pre").css(&#123; "letter-spacing": "3px", //字间距 "text-shadow": "0px 2px 5px rgba(0,0,0,0.5)", // 阴影颜色 "font-family":"SourceHanSansCN-Medium", //设置字体 "background": "linear-gradient(to top, #00c6fb 0%, #005bea 100%)", //渐变颜色 "-webkit-background-clip": "text", //类型 PS中的遮罩 "-webkit-text-fill-color": "transparent" //遮罩处颜色 &#125;); &#125;, 50) 实际效果 核心内容解释&emsp;○ 利用遮罩的原理,将字体使用背景渐变填充,达到渐变的效果&emsp;○ 阴影的颜色建议使用深色&emsp;○ 该js针对标签控件编写,其他控件请自行修改jQuery选择器内容,或参考还没写的jQuery指南&emsp;○ 提供一个渐变色网站供大家选择]]></content>
@@ -100,18 +124,6 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Finereport开发指北 - 界面刷新]]></title>
-    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E7%95%8C%E9%9D%A2%E5%88%B7%E6%96%B0%2F</url>
-    <content type="text"><![CDATA[功能:&ensp;1.刷新表单中的元素,实现数据的重新载入&emsp;&emsp;&emsp;2.全屏刷新时去除加载动画使用场景: 需要数据变化或者界面样式变化的表单设计文件类型: frm版本: v1.0 报表块刷新样例12345678/* 刷新部分 */var Wid = this.options.form.getWidgetByName('Wid_name'); setInterval(function() &#123; Wid.gotoPage(1,"&#123;&#125;",true); // 修改控件名, &#125;, 1000);/* 取消页面刷新加载动画 */FR.HtmlLoader.loadingEffect=function()&#123;&#125; 关于 gotoPage()函数 的解释 引用自 @Armstrong noCache = NULL1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;"); &emsp;此时报表块刷新的数据从缓存里面取，不重新计算 noCache = true1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;",true); &emsp;此时重新计算所有报表块 noCache = lazy (推荐)1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;","lazy"); &emsp;此时重新计算单个报表块 开发延伸 当面对客户针对某个报表块进行带参刷新时可放弃常用的使用界面控件赋值的方式进行传参而采用gotopage()进行带参刷新]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
