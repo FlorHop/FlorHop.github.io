@@ -9,13 +9,38 @@
         <category>Kettle</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Finereprot开发指北 - 报表块进度条]]></title>
     <url>%2F2019%2F08%2F15%2FFR-Finereprot%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8A%A5%E8%A1%A8%E5%9D%97%E8%BF%9B%E5%BA%A6%E6%9D%A1%2F</url>
     <content type="text"><![CDATA[功能: &ensp;1. 在报表块中使用进度条使用场景: 普通展示报表或者看板文件类型: cpt,frm版本: v1.0 简洁风格进度条效果展示 实现方式 可直接粘贴至设计器,修改H3为需要显示的单元格 1"&lt;table cellpadding=0 cellspacing=0 width=100% border=0&gt;&lt;tr&gt;&lt;td width=" + (ROUND((H3 * 80), 2)*0.9) + "%&gt;&lt;table width=100% cellpadding=0 cellspacing=0 &gt;&lt;tr&gt;&lt;td bgcolor=#2a6ca6 style='border-radius:4px'&gt; &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;td width="+ (1-(ROUND((H3 * 80), 2)*0.9)) +"%&gt;&lt;table width = 100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td align=left &gt;&amp;ensp;"+ (H3*100) +"%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" 内容注解&emsp;待补充… 动态进度条效果展示]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Finereport开发指北 - 侧边栏划框]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%92%E6%A1%86%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 侧边框划框使用场景:&ensp;用于多个同层级大屏手动切换并且需要一定的美观度文件类型:&ensp;frm (FR10.0)版本:&ensp;v0.8 样例12345678910111213setTimeout( function() &#123; $("div[widgetname = 'Wid_name']").css("left","-150px"); // 此处需要注意 $("div[widgetname = 'Wid_name']").mouseover(function()&#123; startmove(0);&#125;) $("div[widgetname = 'Wid_name']").mouseleave(function()&#123; startmove(-200);&#125;) &#125;,50 );function startmove(target)&#123; setTimeout(function ()&#123; $("div[widgetname = 'Wid_name']").animate(&#123;left:target+'px'&#125;); &#125;,50)&#125; 实例效果 备注开发建议 此方法还在调试阶段,目前存在弹出]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Finereport开发指北 - 消除滚动条]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%B6%88%E9%99%A4%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 消除页面模块滚动条使用场景:&ensp;用于布局不规范引发的出现滚动条或跑马灯美观问题消除滚动条文件类型:&ensp;frm版本:&ensp;v1.0 样例12345setInterval( function()&#123; $("div[widgetname = 'Wid_name']").find(".reportContent")[0].style.overflow="hidden"; // 修改控件名称 &#125;,1000); 核心内容解释&emsp; 如果页面需要不断的进行刷新建议消除滚动条使用setInterval(),否则使用setTimeout()]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
@@ -51,9 +76,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 消除滚动条]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%B6%88%E9%99%A4%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 消除页面模块滚动条使用场景:&ensp;用于布局不规范引发的出现滚动条或跑马灯美观问题消除滚动条文件类型:&ensp;frm版本:&ensp;v1.0 样例12345setInterval( function()&#123; $("div[widgetname = 'Wid_name']").find(".reportContent")[0].style.overflow="hidden"; // 修改控件名称 &#125;,1000); 核心内容解释&emsp; 如果页面需要不断的进行刷新建议消除滚动条使用setInterval(),否则使用setTimeout()]]></content>
+    <title><![CDATA[Finereport开发指北 - 标签轮播]]></title>
+    <url>%2F2019%2F07%2F17%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%A0%87%E7%AD%BE%E8%BD%AE%E6%92%AD%2F</url>
+    <content type="text"><![CDATA[功能:&ensp;遍历图表各分类,并轮播显示标签使用场景: 页面欠缺动效且用户有需求时文件类型: frm版本: v1.0 样例 引用自 @Chijun.Huang 123456789101112131415161718192021222324setTimeout(function () &#123; var vanchart = FR.Chart.WebUtils.getChart('map').vanCharts.charts[0]; openAutoTooltipCarouselDelay = 3000; openAutoTooltipCarousel(); function openAutoTooltipCarousel(ele) &#123; var series = vanchart.series; // 获取chart下的所有系列 // 获取系列第一个系列的所有数据点 // 注意，每次只能显示一个数据点提示，如果需要显示多个数据点的提示内容，可以在plotOptions里面开启数据提示共享 var points = series[0].points, pointsLen = points.length; // 默认的提示轮播从第一个点开始 var pointIndex = 0; window.openAutoTooltipCarouselTimer = setInterval(function () &#123; // 遍历series下面每个系列的点 // 使用vanchart.showTooltip依次展示不同索引的数据点 vanchart.showTooltip(points[pointIndex]); pointIndex &lt; pointsLen - 1 ? pointIndex++ : pointIndex = 0; &#125;, openAutoTooltipCarouselDelay) &#125;&#125;, 3000) 实际效果 核心内容解释&emsp; 该方法不仅限于地图,柱形图,饼图,折线图等均可使用,需自行调节vanchart对象的指向]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
@@ -61,18 +86,6 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Finereport开发指北 - 侧边栏划框]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%92%E6%A1%86%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 侧边框划框使用场景:&ensp;用于多个同层级大屏手动切换并且需要一定的美观度文件类型:&ensp;frm (FR10.0)版本:&ensp;v0.8 样例12345678910111213setTimeout( function() &#123; $("div[widgetname = 'Wid_name']").css("left","-150px"); // 此处需要注意 $("div[widgetname = 'Wid_name']").mouseover(function()&#123; startmove(0);&#125;) $("div[widgetname = 'Wid_name']").mouseleave(function()&#123; startmove(-200);&#125;) &#125;,50 );function startmove(target)&#123; setTimeout(function ()&#123; $("div[widgetname = 'Wid_name']").animate(&#123;left:target+'px'&#125;); &#125;,50)&#125; 实例效果 备注开发建议 此方法还在调试阶段,目前存在弹出]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -89,9 +102,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 标签轮播]]></title>
-    <url>%2F2019%2F07%2F17%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%A0%87%E7%AD%BE%E8%BD%AE%E6%92%AD%2F</url>
-    <content type="text"><![CDATA[功能:&ensp;遍历图表各分类,并轮播显示标签使用场景: 页面欠缺动效且用户有需求时文件类型: frm版本: v1.0 样例 引用自 @Chijun.Huang 123456789101112131415161718192021222324setTimeout(function () &#123; var vanchart = FR.Chart.WebUtils.getChart('map').vanCharts.charts[0]; openAutoTooltipCarouselDelay = 3000; openAutoTooltipCarousel(); function openAutoTooltipCarousel(ele) &#123; var series = vanchart.series; // 获取chart下的所有系列 // 获取系列第一个系列的所有数据点 // 注意，每次只能显示一个数据点提示，如果需要显示多个数据点的提示内容，可以在plotOptions里面开启数据提示共享 var points = series[0].points, pointsLen = points.length; // 默认的提示轮播从第一个点开始 var pointIndex = 0; window.openAutoTooltipCarouselTimer = setInterval(function () &#123; // 遍历series下面每个系列的点 // 使用vanchart.showTooltip依次展示不同索引的数据点 vanchart.showTooltip(points[pointIndex]); pointIndex &lt; pointsLen - 1 ? pointIndex++ : pointIndex = 0; &#125;, openAutoTooltipCarouselDelay) &#125;&#125;, 3000) 实际效果 核心内容解释&emsp; 该方法不仅限于地图,柱形图,饼图,折线图等均可使用,需自行调节vanchart对象的指向]]></content>
+    <title><![CDATA[Finereport开发指北 - 特殊字体]]></title>
+    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E8%8D%A7%E5%85%89%E5%AD%97%2F</url>
+    <content type="text"><![CDATA[功能: &ensp;1. 使用CSS中text-shadow属性对字体赋予阴影效果,实现类似荧光的字体特效 &ensp;2. 渐变色字体使用场景: 大屏使用的特效字体文件类型: frm版本: v1.0 荧光字体样例123setTimeout(function()&#123;$(".rows-height-counter").css("text-shadow","0 0 10px #fff, 0 0 15px #0000cd, 0 0 20px #0000cd"); &#125;,50); 实际效果 核心内容解释&emsp;关键在于CSS属性 text-shadow 属性.&emsp;10PX的白色晕+15PX的蓝色晕+20PX的蓝色,底色浅点,字体白色,看起来像荧光.&emsp;.rows-height-counter 指的是对全部报表块文字起作用,想对单个起作用只需要换成 div[widgetname= ‘REPORT1’] 这种即可.该项内容可根据预设模块进行调节,标题建议使用标签控件 渐变字体样例123456789101112setTimeout( function () &#123; $("div[widgetname = 'LABEL'] &gt; table &gt; tbody &gt; tr &gt; td &gt; pre").css(&#123; "letter-spacing": "3px", //字间距 "text-shadow": "0px 2px 5px rgba(0,0,0,0.5)", // 阴影颜色 "font-family":"SourceHanSansCN-Medium", //设置字体 "background": "linear-gradient(to top, #00c6fb 0%, #005bea 100%)", //渐变颜色 "-webkit-background-clip": "text", //类型 PS中的遮罩 "-webkit-text-fill-color": "transparent" //遮罩处颜色 &#125;); &#125;, 50) 实际效果 核心内容解释&emsp;○ 利用遮罩的原理,将字体使用背景渐变填充,达到渐变的效果&emsp;○ 阴影的颜色建议使用深色&emsp;○ 该js针对标签控件编写,其他控件请自行修改jQuery选择器内容,或参考还没写的jQuery指南&emsp;○ 提供一个渐变色网站供大家选择]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
@@ -114,19 +127,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 特殊字体]]></title>
-    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E8%8D%A7%E5%85%89%E5%AD%97%2F</url>
-    <content type="text"><![CDATA[功能: &ensp;1. 使用CSS中text-shadow属性对字体赋予阴影效果,实现类似荧光的字体特效 &ensp;2. 渐变色字体使用场景: 大屏使用的特效字体文件类型: frm版本: v1.0 荧光字体样例123setTimeout(function()&#123;$(".rows-height-counter").css("text-shadow","0 0 10px #fff, 0 0 15px #0000cd, 0 0 20px #0000cd"); &#125;,50); 实际效果 核心内容解释&emsp;关键在于CSS属性 text-shadow 属性.&emsp;10PX的白色晕+15PX的蓝色晕+20PX的蓝色,底色浅点,字体白色,看起来像荧光.&emsp;.rows-height-counter 指的是对全部报表块文字起作用,想对单个起作用只需要换成 div[widgetname= ‘REPORT1’] 这种即可.该项内容可根据预设模块进行调节,标题建议使用标签控件 渐变字体样例123456789101112setTimeout( function () &#123; $("div[widgetname = 'LABEL'] &gt; table &gt; tbody &gt; tr &gt; td &gt; pre").css(&#123; "letter-spacing": "3px", //字间距 "text-shadow": "0px 2px 5px rgba(0,0,0,0.5)", // 阴影颜色 "font-family":"SourceHanSansCN-Medium", //设置字体 "background": "linear-gradient(to top, #00c6fb 0%, #005bea 100%)", //渐变颜色 "-webkit-background-clip": "text", //类型 PS中的遮罩 "-webkit-text-fill-color": "transparent" //遮罩处颜色 &#125;); &#125;, 50) 实际效果 核心内容解释&emsp;○ 利用遮罩的原理,将字体使用背景渐变填充,达到渐变的效果&emsp;○ 阴影的颜色建议使用深色&emsp;○ 该js针对标签控件编写,其他控件请自行修改jQuery选择器内容,或参考还没写的jQuery指南&emsp;○ 提供一个渐变色网站供大家选择]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo 开荒笔记-壹 "阅读全文按钮"]]></title>
     <url>%2F2019%2F07%2F04%2FHexo-Hexo%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
     <content type="text"><![CDATA[Blog 显示阅读全文按钮,并能够截选部分文章内容进行简要描述转载至 https://www.jianshu.com/p/78c218f9d1e7 &ensp;@violinlin 推荐方式1在文章中使用&lt; !–more–&gt; 手动进行截断这种方法可以根据文章的内容，自己在合适的位置添加 标签，使用灵活，也是Hexo推荐的方法。 推荐方式2在文章中的front-matter中添加description，并提供文章摘录这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。 推荐方式3自动形成摘要，在主题配置文件中添加默认截取的长度为 150 字符，可以根据需要自行设定 123auto_excerpt: enable: true length: 150 建议使用 &lt; !– more –&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。]]></content>
@@ -136,17 +136,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[人生当浮一大白]]></title>
-    <url>%2F2019%2F07%2F04%2F%E6%9D%82%E8%AE%B0-%E4%BA%BA%E7%94%9F%E5%BD%93%E6%B5%AE%E4%B8%80%E5%A4%A7%E7%99%BD%2F</url>
-    <content type="text"><![CDATA[我希望自己可以成为一个什么样的人,未来的自己又可以成为什么样的人要坚守的底线是什么]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>杂记</tag>
       </tags>
   </entry>
   <entry>
@@ -170,7 +159,18 @@
         <category>编程语言</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[人生当浮一大白]]></title>
+    <url>%2F2019%2F07%2F04%2F%E6%9D%82%E8%AE%B0-%E4%BA%BA%E7%94%9F%E5%BD%93%E6%B5%AE%E4%B8%80%E5%A4%A7%E7%99%BD%2F</url>
+    <content type="text"><![CDATA[我希望自己可以成为一个什么样的人,未来的自己又可以成为什么样的人要坚守的底线是什么]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>杂记</tag>
       </tags>
   </entry>
 </search>
