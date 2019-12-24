@@ -26,15 +26,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 侧边栏划框]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%92%E6%A1%86%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 侧边框划框使用场景:&ensp;用于多个同层级大屏手动切换并且需要一定的美观度文件类型:&ensp;frm (FR10.0)版本:&ensp;v0.8 样例12345678910111213setTimeout( function() &#123; $("div[widgetname = 'Wid_name']").css("left","-150px"); // 此处需要注意 $("div[widgetname = 'Wid_name']").mouseover(function()&#123; startmove(0);&#125;) $("div[widgetname = 'Wid_name']").mouseleave(function()&#123; startmove(-200);&#125;) &#125;,50 );function startmove(target)&#123; setTimeout(function ()&#123; $("div[widgetname = 'Wid_name']").animate(&#123;left:target+'px'&#125;); &#125;,50)&#125; 实例效果 备注开发建议 此方法还在调试阶段,目前存在弹出]]></content>
+    <title><![CDATA[Finereport开发指北 - 消除滚动条]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%B6%88%E9%99%A4%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 消除页面模块滚动条使用场景:&ensp;用于布局不规范引发的出现滚动条或跑马灯美观问题消除滚动条文件类型:&ensp;frm版本:&ensp;v1.0 样例12345setInterval( function()&#123; $("div[widgetname = 'Wid_name']").find(".reportContent")[0].style.overflow="hidden"; // 修改控件名称 &#125;,1000); 核心内容解释&emsp; 如果页面需要不断的进行刷新建议消除滚动条使用setInterval(),否则使用setTimeout()]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -51,6 +52,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Finereport开发指北 - 侧边栏划框]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%92%E6%A1%86%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 侧边框划框使用场景:&ensp;用于多个同层级大屏手动切换并且需要一定的美观度文件类型:&ensp;frm (FR10.0)版本:&ensp;v0.8 样例12345678910111213setTimeout( function() &#123; $("div[widgetname = 'Wid_name']").css("left","-150px"); // 此处需要注意 $("div[widgetname = 'Wid_name']").mouseover(function()&#123; startmove(0);&#125;) $("div[widgetname = 'Wid_name']").mouseleave(function()&#123; startmove(-200);&#125;) &#125;,50 );function startmove(target)&#123; setTimeout(function ()&#123; $("div[widgetname = 'Wid_name']").animate(&#123;left:target+'px'&#125;); &#125;,50)&#125; 实例效果 备注开发建议 此方法还在调试阶段,目前存在弹出]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Finereport开发指北 - 插件开发找门]]></title>
     <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%2F</url>
     <content type="text"><![CDATA[一句话被双引号引用之后就觉得一下子充满了深度,插件也是 ---- Mr 大白 之所以是找门,因为可能你完成此篇分享之后,连门槛都摸不到,所以此篇内容为帮助理解 环境准备 请务必坚持完成环境的搭建,因为从我的入门水平来理解,最难得可能就是这个]]></content>
@@ -63,9 +76,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 消除滚动条]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%B6%88%E9%99%A4%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 消除页面模块滚动条使用场景:&ensp;用于布局不规范引发的出现滚动条或跑马灯美观问题消除滚动条文件类型:&ensp;frm版本:&ensp;v1.0 样例12345setInterval( function()&#123; $("div[widgetname = 'Wid_name']").find(".reportContent")[0].style.overflow="hidden"; // 修改控件名称 &#125;,1000); 核心内容解释&emsp; 如果页面需要不断的进行刷新建议消除滚动条使用setInterval(),否则使用setTimeout()]]></content>
+    <title><![CDATA[Finereport开发指北 - 伪3D界面]]></title>
+    <url>%2F2019%2F07%2F17%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BC%AA3D%2F</url>
+    <content type="text"><![CDATA[功能:&ensp;使用 transform 属性进行模块的倾斜,产生伪3D的效果使用场景: 需要临场感较强且页面内容相对少的大屏样式中文件类型: frm版本: v1.0 样例12345setTimeout( function () &#123; $("div[widgetname= 'Wid_name' ]").css("transform","perspective(500px) rotateY(5deg)"); // Wid_name 修改为模块名称 &#125;,1000) 实际效果 核心内容解释&emsp; 建议将透视模块以左右上下分类,置于画布块中.( 对报表块进行透视容易出现景深不同或边框被遮盖的现象 )]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
@@ -89,9 +102,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 伪3D界面]]></title>
-    <url>%2F2019%2F07%2F17%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E4%BC%AA3D%2F</url>
-    <content type="text"><![CDATA[功能:&ensp;使用 transform 属性进行模块的倾斜,产生伪3D的效果使用场景: 需要临场感较强且页面内容相对少的大屏样式中文件类型: frm版本: v1.0 样例12345setTimeout( function () &#123; $("div[widgetname= 'Wid_name' ]").css("transform","perspective(500px) rotateY(5deg)"); // Wid_name 修改为模块名称 &#125;,1000) 实际效果 核心内容解释&emsp; 建议将透视模块以左右上下分类,置于画布块中.( 对报表块进行透视容易出现景深不同或边框被遮盖的现象 )]]></content>
+    <title><![CDATA[Finereport开发指北 - 特殊字体]]></title>
+    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E8%8D%A7%E5%85%89%E5%AD%97%2F</url>
+    <content type="text"><![CDATA[功能: &ensp;1. 使用CSS中text-shadow属性对字体赋予阴影效果,实现类似荧光的字体特效 &ensp;2. 渐变色字体使用场景: 大屏使用的特效字体文件类型: frm版本: v1.0 荧光字体样例123setTimeout(function()&#123;$(".rows-height-counter").css("text-shadow","0 0 10px #fff, 0 0 15px #0000cd, 0 0 20px #0000cd"); &#125;,50); 实际效果 核心内容解释&emsp;关键在于CSS属性 text-shadow 属性.&emsp;10PX的白色晕+15PX的蓝色晕+20PX的蓝色,底色浅点,字体白色,看起来像荧光.&emsp;.rows-height-counter 指的是对全部报表块文字起作用,想对单个起作用只需要换成 div[widgetname= ‘REPORT1’] 这种即可.该项内容可根据预设模块进行调节,标题建议使用标签控件 渐变字体样例123456789101112setTimeout( function () &#123; $("div[widgetname = 'LABEL'] &gt; table &gt; tbody &gt; tr &gt; td &gt; pre").css(&#123; "letter-spacing": "3px", //字间距 "text-shadow": "0px 2px 5px rgba(0,0,0,0.5)", // 阴影颜色 "font-family":"SourceHanSansCN-Medium", //设置字体 "background": "linear-gradient(to top, #00c6fb 0%, #005bea 100%)", //渐变颜色 "-webkit-background-clip": "text", //类型 PS中的遮罩 "-webkit-text-fill-color": "transparent" //遮罩处颜色 &#125;); &#125;, 50) 实际效果 核心内容解释&emsp;○ 利用遮罩的原理,将字体使用背景渐变填充,达到渐变的效果&emsp;○ 阴影的颜色建议使用深色&emsp;○ 该js针对标签控件编写,其他控件请自行修改jQuery选择器内容,或参考还没写的jQuery指南&emsp;○ 提供一个渐变色网站供大家选择]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
@@ -114,19 +127,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 特殊字体]]></title>
-    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E8%8D%A7%E5%85%89%E5%AD%97%2F</url>
-    <content type="text"><![CDATA[功能: &ensp;1. 使用CSS中text-shadow属性对字体赋予阴影效果,实现类似荧光的字体特效 &ensp;2. 渐变色字体使用场景: 大屏使用的特效字体文件类型: frm版本: v1.0 荧光字体样例123setTimeout(function()&#123;$(".rows-height-counter").css("text-shadow","0 0 10px #fff, 0 0 15px #0000cd, 0 0 20px #0000cd"); &#125;,50); 实际效果 核心内容解释&emsp;关键在于CSS属性 text-shadow 属性.&emsp;10PX的白色晕+15PX的蓝色晕+20PX的蓝色,底色浅点,字体白色,看起来像荧光.&emsp;.rows-height-counter 指的是对全部报表块文字起作用,想对单个起作用只需要换成 div[widgetname= ‘REPORT1’] 这种即可.该项内容可根据预设模块进行调节,标题建议使用标签控件 渐变字体样例123456789101112setTimeout( function () &#123; $("div[widgetname = 'LABEL'] &gt; table &gt; tbody &gt; tr &gt; td &gt; pre").css(&#123; "letter-spacing": "3px", //字间距 "text-shadow": "0px 2px 5px rgba(0,0,0,0.5)", // 阴影颜色 "font-family":"SourceHanSansCN-Medium", //设置字体 "background": "linear-gradient(to top, #00c6fb 0%, #005bea 100%)", //渐变颜色 "-webkit-background-clip": "text", //类型 PS中的遮罩 "-webkit-text-fill-color": "transparent" //遮罩处颜色 &#125;); &#125;, 50) 实际效果 核心内容解释&emsp;○ 利用遮罩的原理,将字体使用背景渐变填充,达到渐变的效果&emsp;○ 阴影的颜色建议使用深色&emsp;○ 该js针对标签控件编写,其他控件请自行修改jQuery选择器内容,或参考还没写的jQuery指南&emsp;○ 提供一个渐变色网站供大家选择]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo 开荒笔记-壹 "阅读全文按钮"]]></title>
     <url>%2F2019%2F07%2F04%2FHexo-Hexo%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
     <content type="text"><![CDATA[Blog 显示阅读全文按钮,并能够截选部分文章内容进行简要描述转载至 https://www.jianshu.com/p/78c218f9d1e7 &ensp;@violinlin 推荐方式1在文章中使用&lt; !–more–&gt; 手动进行截断这种方法可以根据文章的内容，自己在合适的位置添加 标签，使用灵活，也是Hexo推荐的方法。 推荐方式2在文章中的front-matter中添加description，并提供文章摘录这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。 推荐方式3自动形成摘要，在主题配置文件中添加默认截取的长度为 150 字符，可以根据需要自行设定 123auto_excerpt: enable: true length: 150 建议使用 &lt; !– more –&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。]]></content>
@@ -136,18 +136,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[前端开荒游记 (一)]]></title>
-    <url>%2F2019%2F07%2F04%2F%E5%89%8D%E7%AB%AF-%E5%89%8D%E7%AB%AF%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
-    <content type="text"><![CDATA[开荒记录]]></content>
-      <categories>
-        <category>技术</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -171,6 +159,18 @@
       </categories>
       <tags>
         <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端开荒游记 (一)]]></title>
+    <url>%2F2019%2F07%2F04%2F%E5%89%8D%E7%AB%AF-%E5%89%8D%E7%AB%AF%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
+    <content type="text"><![CDATA[开荒记录]]></content>
+      <categories>
+        <category>技术</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
 </search>
