@@ -39,16 +39,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 外置图片背景]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E5%A4%96%E7%BD%AE%E5%9B%BE%E7%89%87%E8%83%8C%E6%99%AF%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 外置图片使用场景:&ensp;使用js将图片背景外置,减少模板体积和加快加载速度,文件类型:&ensp;frm (FR10.0)版本:&ensp;v1.0 样例1234567891011121314//总背景替换//可以通过将素材保存到WebReport/picture目录下，通过js事件引用setTimeout(function () &#123; $(".fr-quick-adaptive-layout").css( "background", "url($&#123;serverURL&#125;/webroot/&#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125;;) center center / contain no-repeat ")&#125;, 200);//报表快背景替换setTimeout(function () &#123; $("div[widgetname='REPORT1']").css( "background", "url($&#123;serverURL&#125;/webroot/ &#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125; ;) center center / contain no-repeat ")&#125;, 200);//更换名称，记得大写。 备注版本问题 低版本FR请修改对应路径信息 相关插件 关于截止我记录此条指北时,外置图片背景插件的健壮性仍然存在问题,且远程开发模式下无法使用,故引用此JS处理图片素材 开发建议 当单纯引用背景时 ( 例如为标题添加边框,图表添加边框等 )建议使用标签控件作为背景载体 图片应放置在与WEB-INF同级的目录下 针对CSS属性的讲解 关于CSS属性问题待补充]]></content>
+    <title><![CDATA[Finereport开发指北 - 插件开发找门]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%2F</url>
+    <content type="text"><![CDATA[一句话被双引号引用之后就觉得一下子充满了深度,插件也是 ---- Mr 大白 之所以是找门,因为可能你完成此篇分享之后,连门槛都摸不到,所以此篇内容为帮助理解 环境准备 请务必坚持完成环境的搭建,因为从我的入门水平来理解,最难得可能就是这个]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
-        <tag>CSS</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -64,15 +63,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 插件开发找门]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%2F</url>
-    <content type="text"><![CDATA[一句话被双引号引用之后就觉得一下子充满了深度,插件也是 ---- Mr 大白 之所以是找门,因为可能你完成此篇分享之后,连门槛都摸不到,所以此篇内容为帮助理解 环境准备 请务必坚持完成环境的搭建,因为从我的入门水平来理解,最难得可能就是这个]]></content>
+    <title><![CDATA[Finereport开发指北 - 外置图片背景]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E5%A4%96%E7%BD%AE%E5%9B%BE%E7%89%87%E8%83%8C%E6%99%AF%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 外置图片使用场景:&ensp;使用js将图片背景外置,减少模板体积和加快加载速度,文件类型:&ensp;frm (FR10.0)版本:&ensp;v1.0 样例1234567891011121314//总背景替换//可以通过将素材保存到WebReport/picture目录下，通过js事件引用setTimeout(function () &#123; $(".fr-quick-adaptive-layout").css( "background", "url($&#123;serverURL&#125;/webroot/&#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125;;) center center / contain no-repeat ")&#125;, 200);//报表快背景替换setTimeout(function () &#123; $("div[widgetname='REPORT1']").css( "background", "url($&#123;serverURL&#125;/webroot/ &#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125; ;) center center / contain no-repeat ")&#125;, 200);//更换名称，记得大写。 备注版本问题 低版本FR请修改对应路径信息 相关插件 关于截止我记录此条指北时,外置图片背景插件的健壮性仍然存在问题,且远程开发模式下无法使用,故引用此JS处理图片素材 开发建议 当单纯引用背景时 ( 例如为标题添加边框,图表添加边框等 )建议使用标签控件作为背景载体 图片应放置在与WEB-INF同级的目录下 针对CSS属性的讲解 关于CSS属性问题待补充]]></content>
       <categories>
         <category>技术</category>
         <category>Finereport</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>JavaScript</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -102,6 +102,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Finereport开发指北 - 界面刷新]]></title>
+    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E7%95%8C%E9%9D%A2%E5%88%B7%E6%96%B0%2F</url>
+    <content type="text"><![CDATA[功能:&ensp;1.刷新表单中的元素,实现数据的重新载入&emsp;&emsp;&emsp;2.全屏刷新时去除加载动画使用场景: 需要数据变化或者界面样式变化的表单设计文件类型: frm版本: v1.0 报表块刷新样例12345678/* 刷新部分 */var Wid = this.options.form.getWidgetByName('Wid_name'); setInterval(function() &#123; Wid.gotoPage(1,"&#123;&#125;",true); // 修改控件名, &#125;, 1000);/* 取消页面刷新加载动画 */FR.HtmlLoader.loadingEffect=function()&#123;&#125; 关于 gotoPage()函数 的解释 引用自 @Armstrong noCache = NULL1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;"); &emsp;此时报表块刷新的数据从缓存里面取，不重新计算 noCache = true1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;",true); &emsp;此时重新计算所有报表块 noCache = lazy (推荐)1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;","lazy"); &emsp;此时重新计算单个报表块 开发延伸 当面对客户针对某个报表块进行带参刷新时可放弃常用的使用界面控件赋值的方式进行传参而采用gotopage()进行带参刷新]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Finereport开发指北 - 特殊字体]]></title>
     <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E8%8D%A7%E5%85%89%E5%AD%97%2F</url>
     <content type="text"><![CDATA[功能: &ensp;1. 使用CSS中text-shadow属性对字体赋予阴影效果,实现类似荧光的字体特效 &ensp;2. 渐变色字体使用场景: 大屏使用的特效字体文件类型: frm版本: v1.0 荧光字体样例123setTimeout(function()&#123;$(".rows-height-counter").css("text-shadow","0 0 10px #fff, 0 0 15px #0000cd, 0 0 20px #0000cd"); &#125;,50); 实际效果 核心内容解释&emsp;关键在于CSS属性 text-shadow 属性.&emsp;10PX的白色晕+15PX的蓝色晕+20PX的蓝色,底色浅点,字体白色,看起来像荧光.&emsp;.rows-height-counter 指的是对全部报表块文字起作用,想对单个起作用只需要换成 div[widgetname= ‘REPORT1’] 这种即可.该项内容可根据预设模块进行调节,标题建议使用标签控件 渐变字体样例123456789101112setTimeout( function () &#123; $("div[widgetname = 'LABEL'] &gt; table &gt; tbody &gt; tr &gt; td &gt; pre").css(&#123; "letter-spacing": "3px", //字间距 "text-shadow": "0px 2px 5px rgba(0,0,0,0.5)", // 阴影颜色 "font-family":"SourceHanSansCN-Medium", //设置字体 "background": "linear-gradient(to top, #00c6fb 0%, #005bea 100%)", //渐变颜色 "-webkit-background-clip": "text", //类型 PS中的遮罩 "-webkit-text-fill-color": "transparent" //遮罩处颜色 &#125;); &#125;, 50) 实际效果 核心内容解释&emsp;○ 利用遮罩的原理,将字体使用背景渐变填充,达到渐变的效果&emsp;○ 阴影的颜色建议使用深色&emsp;○ 该js针对标签控件编写,其他控件请自行修改jQuery选择器内容,或参考还没写的jQuery指南&emsp;○ 提供一个渐变色网站供大家选择]]></content>
@@ -112,18 +124,6 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Finereport开发指北 - 界面刷新]]></title>
-    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E7%95%8C%E9%9D%A2%E5%88%B7%E6%96%B0%2F</url>
-    <content type="text"><![CDATA[功能:&ensp;1.刷新表单中的元素,实现数据的重新载入&emsp;&emsp;&emsp;2.全屏刷新时去除加载动画使用场景: 需要数据变化或者界面样式变化的表单设计文件类型: frm版本: v1.0 报表块刷新样例12345678/* 刷新部分 */var Wid = this.options.form.getWidgetByName('Wid_name'); setInterval(function() &#123; Wid.gotoPage(1,"&#123;&#125;",true); // 修改控件名, &#125;, 1000);/* 取消页面刷新加载动画 */FR.HtmlLoader.loadingEffect=function()&#123;&#125; 关于 gotoPage()函数 的解释 引用自 @Armstrong noCache = NULL1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;"); &emsp;此时报表块刷新的数据从缓存里面取，不重新计算 noCache = true1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;",true); &emsp;此时重新计算所有报表块 noCache = lazy (推荐)1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;","lazy"); &emsp;此时重新计算单个报表块 开发延伸 当面对客户针对某个报表块进行带参刷新时可放弃常用的使用界面控件赋值的方式进行传参而采用gotopage()进行带参刷新]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
