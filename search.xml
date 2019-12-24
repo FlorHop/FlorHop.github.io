@@ -38,19 +38,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Finereport开发指北 - 消除滚动条]]></title>
-    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%B6%88%E9%99%A4%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
-    <content type="text"><![CDATA[功能:&ensp; 消除页面模块滚动条使用场景:&ensp;用于布局不规范引发的出现滚动条或跑马灯美观问题消除滚动条文件类型:&ensp;frm版本:&ensp;v1.0 样例12345setInterval( function()&#123; $("div[widgetname = 'Wid_name']").find(".reportContent")[0].style.overflow="hidden"; // 修改控件名称 &#125;,1000); 核心内容解释&emsp; 如果页面需要不断的进行刷新建议消除滚动条使用setInterval(),否则使用setTimeout()]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Finereport开发指北 - 外置图片背景]]></title>
     <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E5%A4%96%E7%BD%AE%E5%9B%BE%E7%89%87%E8%83%8C%E6%99%AF%2F</url>
     <content type="text"><![CDATA[功能:&ensp; 外置图片使用场景:&ensp;使用js将图片背景外置,减少模板体积和加快加载速度,文件类型:&ensp;frm (FR10.0)版本:&ensp;v1.0 样例1234567891011121314//总背景替换//可以通过将素材保存到WebReport/picture目录下，通过js事件引用setTimeout(function () &#123; $(".fr-quick-adaptive-layout").css( "background", "url($&#123;serverURL&#125;/webroot/&#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125;;) center center / contain no-repeat ")&#125;, 200);//报表快背景替换setTimeout(function () &#123; $("div[widgetname='REPORT1']").css( "background", "url($&#123;serverURL&#125;/webroot/ &#123; 此处放置需要设置为外置的图片路径,去掉&#123;&#125; &#125; ;) center center / contain no-repeat ")&#125;, 200);//更换名称，记得大写。 备注版本问题 低版本FR请修改对应路径信息 相关插件 关于截止我记录此条指北时,外置图片背景插件的健壮性仍然存在问题,且远程开发模式下无法使用,故引用此JS处理图片素材 开发建议 当单纯引用背景时 ( 例如为标题添加边框,图表添加边框等 )建议使用标签控件作为背景载体 图片应放置在与WEB-INF同级的目录下 针对CSS属性的讲解 关于CSS属性问题待补充]]></content>
@@ -73,6 +60,19 @@
       </categories>
       <tags>
         <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Finereport开发指北 - 消除滚动条]]></title>
+    <url>%2F2019%2F07%2F18%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E6%B6%88%E9%99%A4%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
+    <content type="text"><![CDATA[功能:&ensp; 消除页面模块滚动条使用场景:&ensp;用于布局不规范引发的出现滚动条或跑马灯美观问题消除滚动条文件类型:&ensp;frm版本:&ensp;v1.0 样例12345setInterval( function()&#123; $("div[widgetname = 'Wid_name']").find(".reportContent")[0].style.overflow="hidden"; // 修改控件名称 &#125;,1000); 核心内容解释&emsp; 如果页面需要不断的进行刷新建议消除滚动条使用setInterval(),否则使用setTimeout()]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -102,6 +102,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Finereport开发指北 - 界面刷新]]></title>
+    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E7%95%8C%E9%9D%A2%E5%88%B7%E6%96%B0%2F</url>
+    <content type="text"><![CDATA[功能:&ensp;1.刷新表单中的元素,实现数据的重新载入&emsp;&emsp;&emsp;2.全屏刷新时去除加载动画使用场景: 需要数据变化或者界面样式变化的表单设计文件类型: frm版本: v1.0 报表块刷新样例12345678/* 刷新部分 */var Wid = this.options.form.getWidgetByName('Wid_name'); setInterval(function() &#123; Wid.gotoPage(1,"&#123;&#125;",true); // 修改控件名, &#125;, 1000);/* 取消页面刷新加载动画 */FR.HtmlLoader.loadingEffect=function()&#123;&#125; 关于 gotoPage()函数 的解释 引用自 @Armstrong noCache = NULL1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;"); &emsp;此时报表块刷新的数据从缓存里面取，不重新计算 noCache = true1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;",true); &emsp;此时重新计算所有报表块 noCache = lazy (推荐)1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;","lazy"); &emsp;此时重新计算单个报表块 开发延伸 当面对客户针对某个报表块进行带参刷新时可放弃常用的使用界面控件赋值的方式进行传参而采用gotopage()进行带参刷新]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Finereport</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Finereport开发指北 - 特殊字体]]></title>
     <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E8%8D%A7%E5%85%89%E5%AD%97%2F</url>
     <content type="text"><![CDATA[功能: &ensp;1. 使用CSS中text-shadow属性对字体赋予阴影效果,实现类似荧光的字体特效 &ensp;2. 渐变色字体使用场景: 大屏使用的特效字体文件类型: frm版本: v1.0 荧光字体样例123setTimeout(function()&#123;$(".rows-height-counter").css("text-shadow","0 0 10px #fff, 0 0 15px #0000cd, 0 0 20px #0000cd"); &#125;,50); 实际效果 核心内容解释&emsp;关键在于CSS属性 text-shadow 属性.&emsp;10PX的白色晕+15PX的蓝色晕+20PX的蓝色,底色浅点,字体白色,看起来像荧光.&emsp;.rows-height-counter 指的是对全部报表块文字起作用,想对单个起作用只需要换成 div[widgetname= ‘REPORT1’] 这种即可.该项内容可根据预设模块进行调节,标题建议使用标签控件 渐变字体样例123456789101112setTimeout( function () &#123; $("div[widgetname = 'LABEL'] &gt; table &gt; tbody &gt; tr &gt; td &gt; pre").css(&#123; "letter-spacing": "3px", //字间距 "text-shadow": "0px 2px 5px rgba(0,0,0,0.5)", // 阴影颜色 "font-family":"SourceHanSansCN-Medium", //设置字体 "background": "linear-gradient(to top, #00c6fb 0%, #005bea 100%)", //渐变颜色 "-webkit-background-clip": "text", //类型 PS中的遮罩 "-webkit-text-fill-color": "transparent" //遮罩处颜色 &#125;); &#125;, 50) 实际效果 核心内容解释&emsp;○ 利用遮罩的原理,将字体使用背景渐变填充,达到渐变的效果&emsp;○ 阴影的颜色建议使用深色&emsp;○ 该js针对标签控件编写,其他控件请自行修改jQuery选择器内容,或参考还没写的jQuery指南&emsp;○ 提供一个渐变色网站供大家选择]]></content>
@@ -112,18 +124,6 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Finereport开发指北 - 界面刷新]]></title>
-    <url>%2F2019%2F07%2F16%2FFR-Finereport%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E7%95%8C%E9%9D%A2%E5%88%B7%E6%96%B0%2F</url>
-    <content type="text"><![CDATA[功能:&ensp;1.刷新表单中的元素,实现数据的重新载入&emsp;&emsp;&emsp;2.全屏刷新时去除加载动画使用场景: 需要数据变化或者界面样式变化的表单设计文件类型: frm版本: v1.0 报表块刷新样例12345678/* 刷新部分 */var Wid = this.options.form.getWidgetByName('Wid_name'); setInterval(function() &#123; Wid.gotoPage(1,"&#123;&#125;",true); // 修改控件名, &#125;, 1000);/* 取消页面刷新加载动画 */FR.HtmlLoader.loadingEffect=function()&#123;&#125; 关于 gotoPage()函数 的解释 引用自 @Armstrong noCache = NULL1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;"); &emsp;此时报表块刷新的数据从缓存里面取，不重新计算 noCache = true1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;",true); &emsp;此时重新计算所有报表块 noCache = lazy (推荐)1this.options.form.getWidgetByName("Wid_name").gotoPage(2,"&#123;parameter:'"+parameter+"'&#125;","lazy"); &emsp;此时重新计算单个报表块 开发延伸 当面对客户针对某个报表块进行带参刷新时可放弃常用的使用界面控件赋值的方式进行传参而采用gotopage()进行带参刷新]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Finereport</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -151,6 +151,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[人生当浮一大白]]></title>
+    <url>%2F2019%2F07%2F04%2F%E6%9D%82%E8%AE%B0-%E4%BA%BA%E7%94%9F%E5%BD%93%E6%B5%AE%E4%B8%80%E5%A4%A7%E7%99%BD%2F</url>
+    <content type="text"><![CDATA[我希望自己可以成为一个什么样的人,未来的自己又可以成为什么样的人要坚守的底线是什么]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>杂记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[java开荒游记-壹 "浅尝辄止还是钻研到底"]]></title>
     <url>%2F2019%2F07%2F04%2Fjava-java%E5%BC%80%E8%8D%92%E7%AC%94%E8%AE%B0-1%2F</url>
     <content type="text"><![CDATA[知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。物有本末，事有终始，知所先后，则近道矣. 《大学》 &emsp;浅尝辄止不一定是坏事情,在有限的时间里该专一的做一件事情还是发散开来这本身就没有一个确定的答案,在我眼中这和工作仿佛有莫大的联系.&emsp;很荣幸我选择了一个和年龄不相匹配的工作,它需要我有足够充实的积淀应对风险,却没有给我足够成长的时间( 不过这原本就不是公司该考虑的问题 ),所以我需要时间,相比深耕技术,我可能现阶段更需要看似渊博的见识和足够强的理解能力,因此我需要急切的指导这项技能的深浅是如何定义的,我该”止于何处” 转载自 java入门请不要放弃 其中作者解释为: 5 精通 必须了解其基本原理并且可以熟练应用 闭着眼睛都能敲出代码4 掌握 在需要的时候可以通过查询帮助文档 或者网上资料的方式完成功能3 需要留下深刻的记忆 把代码照着敲几遍 记得住就记 记不住回头查阅即可2 在记忆中留下这个知识点 在以后学习过程中看到了 有眼熟的感觉即可1 不需要学（看一眼就行了）]]></content>
@@ -160,17 +171,6 @@
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[人生当浮一大白]]></title>
-    <url>%2F2019%2F07%2F04%2F%E6%9D%82%E8%AE%B0-%E4%BA%BA%E7%94%9F%E5%BD%93%E6%B5%AE%E4%B8%80%E5%A4%A7%E7%99%BD%2F</url>
-    <content type="text"><![CDATA[我希望自己可以成为一个什么样的人,未来的自己又可以成为什么样的人要坚守的底线是什么]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>杂记</tag>
       </tags>
   </entry>
 </search>

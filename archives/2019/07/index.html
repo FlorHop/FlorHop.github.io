@@ -342,9 +342,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/07/18/FR-Finereport常用操作-侧边栏划框/" itemprop="url">
+            <a class="post-title-link" href="/2019/07/18/FR-Finereport常用操作-消除滚动条/" itemprop="url">
               
-                <span itemprop="name">Finereport开发指北 - 侧边栏划框</span>
+                <span itemprop="name">Finereport开发指北 - 消除滚动条</span>
               
             </a>
         
@@ -377,9 +377,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/07/18/FR-Finereport常用操作-消除滚动条/" itemprop="url">
+            <a class="post-title-link" href="/2019/07/18/FR-Finereport常用操作-侧边栏划框/" itemprop="url">
               
-                <span itemprop="name">Finereport开发指北 - 消除滚动条</span>
+                <span itemprop="name">Finereport开发指北 - 侧边栏划框</span>
               
             </a>
         
@@ -552,9 +552,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/07/16/FR-Finereport常用操作-荧光字/" itemprop="url">
+            <a class="post-title-link" href="/2019/07/16/FR-Finereport常用操作-界面刷新/" itemprop="url">
               
-                <span itemprop="name">Finereport开发指北 - 特殊字体</span>
+                <span itemprop="name">Finereport开发指北 - 界面刷新</span>
               
             </a>
         
@@ -587,9 +587,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/07/16/FR-Finereport常用操作-界面刷新/" itemprop="url">
+            <a class="post-title-link" href="/2019/07/16/FR-Finereport常用操作-荧光字/" itemprop="url">
               
-                <span itemprop="name">Finereport开发指北 - 界面刷新</span>
+                <span itemprop="name">Finereport开发指北 - 特殊字体</span>
               
             </a>
         
@@ -657,9 +657,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/07/04/前端-前端开荒笔记-1/" itemprop="url">
+            <a class="post-title-link" href="/2019/07/04/杂记-人生当浮一大白/" itemprop="url">
               
-                <span itemprop="name">前端开荒游记 (一)</span>
+                <span itemprop="name">人生当浮一大白</span>
               
             </a>
         
@@ -755,7 +755,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -945,6 +945,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'lChok1G7SiMktQq0Qd7jER1I-gzGzoHsz',
+        appKey: '8X9DE4yRhxb108n1CR8CyqYb',
+        placeholder: 'Just go go',
+        avatar:'/uploads/avatar.png',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
